@@ -1,0 +1,17 @@
+solution("qr_generator")
+configurations({"Debug", "Release", "Analyze"})
+
+configuration("Debug")
+flags({"Symbols"})
+buildoptions({"-g"})
+configuration("Release")
+flags({"OptimizeSpeed"})
+configuration("Analyze")
+buildoptions({"--analyze"})
+configuration({})
+
+project("generator")
+kind("ConsoleApp")
+language("C++")
+buildoptions({"-std=c++0x"})
+files({"main.cpp", "polynomial.cpp", "qr_code.cpp", "bit_grid.cpp", "bitmap.cpp"})
